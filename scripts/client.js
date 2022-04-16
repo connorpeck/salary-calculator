@@ -7,7 +7,7 @@ function onReady(){
 }
 employeeInfo =[];
 
-function employeeInfoIn(){
+function employeeInfoIn(){ 
    let inputForm = {
        firstName: $('#firstNameIn').val(),
        lastName: $('#lastNameIn').val(),
@@ -33,6 +33,8 @@ function displayInfo(){
     $('#monthlyCostOut').empty().append('<h4>' +' Monthly Cost: ' + '$' +  monthlyCost  + '</h4>');
     if (monthlyCost >= 20000){
         console.log('too much');
+        $('#monthlyCostOut').css("background-color", "red");
+        $('#monthlyCostOut').empty().append(`<h4> Salary Out Of Range: ${monthlyCost} </h4>`);
     }
 }
     
