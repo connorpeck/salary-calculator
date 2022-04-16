@@ -2,6 +2,7 @@ $(document).ready( onReady);
 
 function onReady(){
     $('#submitInfoButtonIn').on('click', employeeInfoIn)
+    $('#submitInfoButtonIn').on('click', displayInfo)
 }
 employeeInfo =[];
 
@@ -13,11 +14,19 @@ function employeeInfoIn(){
        jobTitle: $('#jobTitleIn').val(),
        annualSalary: $('#annualSalaryIn').val()
    }
+   employeeInfo.push(inputForm);
+   console.log('Employee info array:', employeeInfo);
+
+
+} // end employeeInfoIn
+
+function displayInfo(){
+    console.log('in display info ');
    let el = $('#infoOut');
     el.empty();
     for (let i=0; i<employeeInfo.length; i++){
-    el.append('<li' + employeeInfo[i].firstName + '</li>')
-
+    el.append(`<li> ${employeeInfo[i].firstName}, ${employeeInfo[i].lastName},  ${employeeInfo[i].ID},${employeeInfo[i].jobTitle} : ${employeeInfo[i].annualSalary} </li>`)
+    }
 }
    // clearing inputs
    $('#firstNameIn').val('')
@@ -26,8 +35,7 @@ function employeeInfoIn(){
    $('#jobTitleIn').val('')
    $('#annualSalaryIn').val('')
 
-   employeeInfo.push(inputForm);
-   console.log('Employee info array:', employeeInfo);
+  
 
    
-} // end employeeInfoIn
+
