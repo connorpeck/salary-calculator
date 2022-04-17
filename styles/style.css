@@ -21,9 +21,10 @@ ul {
 }
  
 ul li {
-    background-color: rgb(228, 252, 252);
+    background-color: rgb(235, 235, 235);
     margin: 5px;
-    display: table ;
+    grid-row: auto;
+    display: grid;
 }
 
 input[type=text] {
@@ -33,4 +34,19 @@ input[type=text] {
   input[type=number] {
     border: 2px solid rgb(68, 117, 129);
     border-radius: 4px;
+  }
+
+table,th,td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th,td {
+    padding: 15px;
+
+}
+th{
+    text-align: left;
+}
+tr:nth-child(even) {
+    background-color: #c5e3e3;
   }

@@ -5,6 +5,7 @@ function onReady(){
     $('#submitInfoButtonIn').on('click', displayInfo)
     $('#submitInfoButtonIn').on('click', clearInputs)
     $('#infoOut').on('click', '.deleteEmployeeButton', deleteEmployee) 
+
 }
 employeeInfo =[];
 
@@ -29,13 +30,13 @@ function displayInfo(){
     el.empty();
     let monthlyCost = 0;
     for (let i=0; i<employeeInfo.length; i++){
-    el.append(`<li> First Name: ${employeeInfo[i].firstName},
+    el.append(`<td> First Name: ${employeeInfo[i].firstName},
      Last Name: ${employeeInfo[i].lastName},  
      Employee ID: ${employeeInfo[i].ID}, 
-     Job Title: ${employeeInfo[i].jobTitle},
+     Job Title: ${employeeInfo[i].jobTitle}
      Annual Salary: $${employeeInfo[i].annualSalary} 
      <button class="deleteEmployeeButton" data-index="${i}">Delete</button>
-     </li>`);
+     </td>`);
      monthlyCost += Number(employeeInfo[i].annualSalary / 12);
     
 //start if statement
@@ -54,7 +55,7 @@ function displayInfo(){
 
 el = $('#monthlyCostOut');
 el.empty();
-el.append('Total Monthly Cost: $', monthlyCost);
+el.append('Total Monthly Cost: $', monthlyCost.toFixed(2));
 }// end displayInfo
 
 
