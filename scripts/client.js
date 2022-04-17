@@ -29,11 +29,11 @@ function displayInfo(){
     el.empty();
     let monthlyCost = 0;
     for (let i=0; i<employeeInfo.length; i++){
-    el.append(`<li> ${employeeInfo[i].firstName},
-     ${employeeInfo[i].lastName},  
-     ${employeeInfo[i].ID}, 
-     ${employeeInfo[i].jobTitle}: 
-     ${employeeInfo[i].annualSalary} 
+    el.append(`<li> First Name: ${employeeInfo[i].firstName},
+     Last Name: ${employeeInfo[i].lastName},  
+     Employee ID: ${employeeInfo[i].ID}, 
+     Job Title: ${employeeInfo[i].jobTitle},
+     Annual Salary: $${employeeInfo[i].annualSalary} 
      <button class="deleteEmployeeButton" data-index="${i}">Delete</button>
      </li>`);
      monthlyCost += Number(employeeInfo[i].annualSalary / 12);
@@ -43,7 +43,13 @@ function displayInfo(){
         console.log('too much');
         $('#monthlyCostOut').css("background-color", "red");
         $('#monthlyCostOut').empty().append(`<h4> Monthly Cost Is Too High!: ${monthlyCost} </h4>`);
-    } // end if statement
+    } 
+    // change the color back to normal once someone is deleted 
+    else {
+        $('#monthlyCostOut').css("background-color", "LightBlue");
+    }
+    
+    // end if statement
 } // display monthyly cost
 
 el = $('#monthlyCostOut');
