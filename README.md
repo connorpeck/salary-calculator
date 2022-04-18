@@ -8,7 +8,8 @@ Built an app that takes in employee information, shows it on the dom as a table 
 Duration: 1 Weekend 
 
 Screen Shot
-"1512" alt="Screen Shot 2022-04-18 at 1 35 10 PM" src="https://user-images.githubusercontent.com/90285369/163858021-86b0b3ac-42ff-4e01-8ef8-d755a0b2c201.png">
+<img width="1512" alt="Screen Shot 2022-04-18 at 1 35 10 PM" src="https://user-images.githubusercontent.com/90285369/163858199-89d2c8a7-24ea-414a-8578-2792dab14894.png">
+
 
 <img width="1508" alt="Screen Shot 2022-04-18 at 1 34 59 PM" src="https://user-images.githubusercontent.com/90285369/163858070-56705abe-5281-4f84-9bc3-a9c8c8177f8e.png">
 
