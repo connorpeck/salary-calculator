@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Salary Calculator</h1>
-    <h4 id="monthlyCostOut"></h4>
+    <h4 id="monthlyCostOut" class="withinBudget">Monthly Cost: $0.00</h4>
     <h2>Add Employee</h2>
 <div id="infoInDiv">
     <input type="text" id="firstNameIn" placeholder="First Name">
@@ -25,19 +25,30 @@
 <!-- end input div -->
 <br/>
 <h3>Employees</h3>
-<table style="width:100%">
+<table id="outputTable" >
+    <thead>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>ID</th>
             <th>Job Title</th>
             <th>Annual Salary</th>
+            <th>Delete</th>
         </tr>
-        <td>asdf</td>
-        <td>adsf</td>
-        <td>sdfff</td>
-        <td>sdfsafd</td>
-        <td>asdfaf</td>
+    </thead>
+<tbody id="itemsToAppend">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</tbody>
+    
+        
+    
 </table>
 <div id="outputDiv"> 
     <ul id="infoOut"> 

@@ -4,7 +4,7 @@ function onReady(){
     $('#submitInfoButtonIn').on('click', employeeInfoIn)
     $('#submitInfoButtonIn').on('click', displayInfo)
     $('#submitInfoButtonIn').on('click', clearInputs)
-    $('#infoOut').on('click', '.deleteEmployeeButton', deleteEmployee) 
+    $('#itemsToAppend').on('click', '.deleteEmployeeButton', deleteEmployee) 
 
 }
 employeeInfo =[];
@@ -24,38 +24,58 @@ function employeeInfoIn(){
 
 } // end employeeInfoIn
 
-function displayInfo(){ 
-    console.log('in display info ');
-   let el = $('#infoOut');
-    el.empty();
-    let monthlyCost = 0;
-    for (let i=0; i<employeeInfo.length; i++){
-    el.append(`<td> First Name: ${employeeInfo[i].firstName},
-     Last Name: ${employeeInfo[i].lastName},  
-     Employee ID: ${employeeInfo[i].ID}, 
-     Job Title: ${employeeInfo[i].jobTitle}
-     Annual Salary: $${employeeInfo[i].annualSalary} 
-     <button class="deleteEmployeeButton" data-index="${i}">Delete</button>
-     </td>`);
-     monthlyCost += Number(employeeInfo[i].annualSalary / 12);
-    
-//start if statement
-    if (monthlyCost >= 20000){
-        console.log('too much');
-        $('#monthlyCostOut').css("background-color", "red");
-        $('#monthlyCostOut').empty().append(`<h4> Monthly Cost Is Too High!: ${monthlyCost} </h4>`);
-    } 
-    // change the color back to normal once someone is deleted 
-    else {
-        $('#monthlyCostOut').css("background-color", "LightBlue");
-    }
-    
-    // end if statement
-} // display monthyly cost
+// function displayInfo(){ 
+//     console.log('in display info ');
+//    let el = $('#infoOut');
+//     el.empty();
+//     let monthlyCost = 0;
+//     for (let i=0; i<employeeInfo.length; i++){
+//     el.append(`<li> First Name: ${employeeInfo[i].firstName},
+//      Last Name: ${employeeInfo[i].lastName},  
+//      Employee ID: ${employeeInfo[i].ID}, 
+//      Job Title: ${employeeInfo[i].jobTitle}
+//      Annual Salary: $${employeeInfo[i].annualSalary} 
+//      <button class="deleteEmployeeButton" data-index="${i}">Delete</button>
+//      </li>`);
+//      monthlyCost += Number(employeeInfo[i].annualSalary / 12);
 
-el = $('#monthlyCostOut');
-el.empty();
-el.append('Total Monthly Cost: $', monthlyCost.toFixed(2));
+
+//puts each item into collum,/////
+
+
+
+     function displayInfo(){ 
+        console.log('in display info ');
+       let el = $('#itemsToAppend');
+        el.empty();
+        let monthlyCost = 0;
+        for (let i=0; i<employeeInfo.length; i++){
+        el.append(`<tr><td> ${employeeInfo[i].firstName}</td>,
+        <td> ${employeeInfo[i].lastName}</td>,  
+        <td> ${employeeInfo[i].ID}</td>, 
+        <td> ${employeeInfo[i].jobTitle}</td>
+        <td> $${employeeInfo[i].annualSalary} </td>
+        <td> <button class="deleteEmployeeButton" data-index="${i}">Delete</button>
+         </td> </tr>`);
+         monthlyCost += Number(employeeInfo[i].annualSalary / 12);
+
+} // display monthyly cost  
+
+//start if statement
+if (monthlyCost >= 20000){
+    console.log('too much');
+    $('#monthlyCostOut').removeClass("withinBudget").addClass("overBudget")
+    $('#monthlyCostOut').empty().append(`<h4> Monthly Cost Is Too High: $${monthlyCost.toFixed(2)} </h4>`);
+} 
+// change the color back to normal once someone is deleted 
+else {
+    $('#monthlyCostOut').addClass("withinBudget").removeClass("overBudget");
+    el = $('#monthlyCostOut');
+    el.empty();
+    el.append('Total Monthly Cost: $', monthlyCost.toFixed(2));
+}
+
+// end if statement
 }// end displayInfo
 
 
@@ -76,7 +96,7 @@ function deleteEmployee(){
     displayInfo();
 
 }
-  
+   
 
    
 
