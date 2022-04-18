@@ -1,11 +1,13 @@
-body {background-color: #C6CF9E;}
+body {background-color: #8F8FA0;}
 
 h1 {text-align: center; 
 font-family:Arial, Helvetica, sans-serif;
 font-style: normal;
-color: #C6CF9E;
-background-color: #485318;
+color: #D6C6A4;
+background-color: #595970;
+opacity: calc(70%);
 padding: 20px;
+
 border: 2px solid black(68, 117, 129);}
 h4 {text-align: center;}
 
@@ -13,21 +15,21 @@ h4 {text-align: center;}
 body {
 	padding: 40px;
 	box-shadow:
-		inset #5C662D 0 0 0 12px;
+		inset #595973 0 0 0 12px;
 }
 
 
 input[type=text] {
-    border: 2px solid rgb(68, 117, 129);
+    border: 2px solid #595970;
     border-radius: 4px;
   }
   input[type=number] {
-    border: 2px solid rgb(68, 117, 129);
+    border: 2px solid #595970;
     border-radius: 4px;
   }
 
 table,th,td {
-    border: 2px solid rgb(68, 117, 129);
+    border: 2px solid #595970;
     border-collapse: collapse;
 
 }
@@ -39,7 +41,7 @@ th{
     text-align: left;
 }
 tbody > tr:nth-child(even) {
-    background-color: #c5e3e3;
+    background-color: #94A799;
   }
 
 tbody > tr:nth-child(odd) {
@@ -51,12 +53,12 @@ table, tr {
 }
 
 thead {
-    background-color: #9DA76E;
+    background-color: #75907C;
 }
 
 h4.withinBudget {
-    background-color: #FFECBD;
+    background-color: #8F8FA0;
 }
 h4.overBudget {
-    background-color: rgb(210, 93, 93);
+    background-color: rgb(172, 71, 71);
 }

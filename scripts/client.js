@@ -5,10 +5,8 @@ function onReady(){
     $('#submitInfoButtonIn').on('click', displayInfo)
     $('#submitInfoButtonIn').on('click', clearInputs)
     $('#itemsToAppend').on('click', '.deleteEmployeeButton', deleteEmployee) 
-
 }
 employeeInfo =[];
-
 function employeeInfoIn(){ 
    let newEmployee = {
        firstName: $('#firstNameIn').val(),
@@ -24,33 +22,13 @@ function employeeInfoIn(){
 
 } // end employeeInfoIn
 
-// function displayInfo(){ 
-//     console.log('in display info ');
-//    let el = $('#infoOut');
-//     el.empty();
-//     let monthlyCost = 0;
-//     for (let i=0; i<employeeInfo.length; i++){
-//     el.append(`<li> First Name: ${employeeInfo[i].firstName},
-//      Last Name: ${employeeInfo[i].lastName},  
-//      Employee ID: ${employeeInfo[i].ID}, 
-//      Job Title: ${employeeInfo[i].jobTitle}
-//      Annual Salary: $${employeeInfo[i].annualSalary} 
-//      <button class="deleteEmployeeButton" data-index="${i}">Delete</button>
-//      </li>`);
-//      monthlyCost += Number(employeeInfo[i].annualSalary / 12);
-
-
-//puts each item into collum,/////
-
-
-
-     function displayInfo(){ 
-        console.log('in display info ');
+function displayInfo(){ 
+    console.log('in display info ');
        let el = $('#itemsToAppend');
         el.empty();
         let monthlyCost = 0;
-        for (let i=0; i<employeeInfo.length; i++){
-        el.append(`<tr><td> ${employeeInfo[i].firstName}</td>,
+ for (let i=0; i<employeeInfo.length; i++){
+    el.append(`<tr><td> ${employeeInfo[i].firstName}</td>,
         <td> ${employeeInfo[i].lastName}</td>,  
         <td> ${employeeInfo[i].ID}</td>, 
         <td> ${employeeInfo[i].jobTitle}</td>
@@ -73,14 +51,12 @@ else {
     el = $('#monthlyCostOut');
     el.empty();
     el.append('Total Monthly Cost: $', monthlyCost.toFixed(2));
-}
-
-// end if statement
+}// end if statement
 }// end displayInfo
 
 
-   // clearing inputs
-   function clearInputs(){
+ // clearing inputs
+function clearInputs(){
    $('#firstNameIn').val('')
    $('#lastNameIn').val('')
    $('#idIn').val('')
@@ -95,7 +71,7 @@ function deleteEmployee(){
     employeeInfo.splice( $(this).data( 'index' ), 1 );
     displayInfo();
 
-}
+} // end deleteEmployee
    
 
    
